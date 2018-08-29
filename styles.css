@@ -23,12 +23,17 @@ input[type=submit] {
     float: left;
     border: 2px solid black;
     margin-top: 15px;
-    margin-left: 30px;
     margin-bottom: 15px;
+    margin-left: 30px;
     padding: 10px;
     width: 200px;
     height: 200px;
-    box-shadow: 8px 8px 5px grey;
+    box-shadow: 5px 5px 2px lightgray;
+    transition: 0.3s;
+}
+
+#thread:hover {
+    box-shadow: 8px 8px 4px grey;
 }
 
 .loader,

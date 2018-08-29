@@ -1,17 +1,14 @@
 $('form').submit((event) => {
     let subreddit = $('input:text').val();
+    let url = `https://www.reddit.com/r/${subreddit}.json`;
     event.preventDefault();
 
     $('#results').html('<div class="loader">Loading...</div>');
 
-    let url = `https://www.reddit.com/r/${subreddit}.json`;
-
-    let promise = $.ajax({
+    $.ajax({
 	type: 'GET',
 	url: url
-    });
-
-    promise.then((threads) => {
+    }).then((threads) => {
 	console.log(threads.data.children);
 	let html = '';
 	threads.data.children.forEach((thread) => {
